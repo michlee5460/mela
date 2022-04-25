@@ -90,7 +90,7 @@ function handleSignoutClick(event) {
   gapi.auth2.getAuthInstance().signOut();
 }
 
-function makeRow(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm) {
+function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm) {
   var rowHTML = "<tr>";
   rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
   rowHTML += "<td>" + stage + "</td>";
@@ -130,18 +130,60 @@ function makeRow(lastName, firstName, stage, primaryProvider, pathCode, radCode,
   return rowHTML;
 }
 
+function makeRowNotEditable(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm) {
+  var rowHTML = "<tr>";
+  rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
+  rowHTML += "<td>" + stage + "</td>";
+  rowHTML += "<td>" + primaryProvider + "</td>";
+  console.log(pathCode);
+  if (pathCode != undefined) {
+    rowHTML += "<td>" + pathCode + "</td>";
+  } else {
+    rowHTML += "<td> </td>";
+  }
+  if (radCode != undefined) {
+    rowHTML += "<td>" + radCode + "</td>";
+  } else {
+    rowHTML += "<td> </td>";
+  }
+  if (needsMedOnc == "TRUE") {
+    rowHTML += "<td><img src=\"assets/checkbox.svg\"></td>";
+  } else {
+    rowHTML += "<td></td>";
+  }
+  if (needsRadOnc == "TRUE") {
+    rowHTML += "<td><img src=\"assets/checkbox.svg\"></td>";
+  } else {
+    rowHTML += "<td></td>";
+  }
+  if (needsSurgery == "TRUE") {
+    rowHTML += "<td><img src=\"assets/checkbox.svg\"></td>";
+  } else {
+    rowHTML += "<td></td>";
+  }
+  if (needsDerm == "TRUE") {
+    rowHTML += "<td><img src=\"assets/checkbox.svg\"></td>";
+  } else {
+    rowHTML += "<td></td>";
+  }
+  rowHTML += "</tr>";
+  return rowHTML;
+}
+
 function listPatients() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: SHEET_ID,
-    range: 'PatientData!A2:J',
+    range: 'PatientData!A2:K',
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
     for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
-        console.log(row[0]);
-        console.log(makeRow(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]));
-        document.getElementById('table-body').innerHTML += makeRow(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]);
+        if (row[10]=="04/04/2022"){
+          document.getElementById('table-body-editable').innerHTML += makeRowEditable(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]);
+        } else {
+          document.getElementById('table-body-not-editable').innerHTML += makeRowNotEditable(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]);
+        }
     }
     } else {
     alert('No data found.');
