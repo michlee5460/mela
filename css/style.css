@@ -199,3 +199,36 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Patient List page */
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+  background-color: #F8F8F6;
+  margin-left: 16px;
+}
+
+.patient-list-button {
+  width: 205px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px #556EF2;
+  background-color: #FFFFFF;
+  color: #556EF2;
+  padding-top: 0.5rem;
+}
+
+
+.search-bar-top {
+  padding-top: 1rem;
+  background-color: #F8F8F6;
+  padding-bottom: 2rem;
+}
+
+#search-icon {
+  margin-top: 2.3rem;
+  margin-left: 1rem;
+}
