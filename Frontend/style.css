@@ -106,6 +106,10 @@ body {
   text-align: center;
 }
 
+.back-title {
+  display: inline;
+}
+
 .control-label {
   padding-bottom: 0.8rem;
   padding-top: 1.1rem;
@@ -119,29 +123,13 @@ body {
   border-radius: 0.25rem;
 }
 
-.patient-record-title {
-  margin-left: 15px;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.not-required{
-  color: #848484;
-  padding-bottom: 0.8rem;
-  padding-top: 1.1rem;
+.form-check-label {
+  padding-bottom: 0.4rem;
+  padding-left: 0.3rem;
 }
 
 .form-group {
   margin-top: 1.5rem;
-}
-
-.ulcerated {
-  margin-bottom: 1rem;
-}
-
-.form-check-label {
-  padding-bottom: 0.4rem;
-  padding-left: 0.3rem;
 }
 
 .form-group.required .control-label:after {
@@ -150,9 +138,48 @@ body {
 }
 
 
-
 .label {
   color: #848484;
+}
+
+.not-required{
+  color: #848484;
+  padding-bottom: 0.8rem;
+  padding-top: 1.1rem;
+}
+
+.patient-record-title {
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.patient-record-top{
+  padding-top: 2rem;
+  background-color: #F8F8F6;
+  padding-bottom: 2rem;
+}
+
+.primary-button {
+  width:  180px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #556EF2;
+  color: #FFFFFF;
+  padding-top: 0.5rem;
+}
+
+.secondary-button {
+  width:  180px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px #556EF2;
+  background-color: #FFFFFF;
+  color: #556EF2;
+  padding-top: 0.5rem;
 }
 
 .specify {
@@ -160,6 +187,15 @@ body {
   font-size: 0.8rem;
 }
 
+.ulcerated {
+  margin-bottom: 1rem;
+}
+
+#back-icon{
+  margin-left: 15px;
+}
+
 #positive-fam-history{
   margin-bottom: 0.5rem;
 }
+
