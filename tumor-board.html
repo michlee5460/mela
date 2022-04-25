@@ -58,163 +58,128 @@
     </div>
 
     <div class="container-lg">
-        <!-- April 4 agenda table -->
-        <div class="row agenda">
-            <p class="conference-date"> Apr 4, 2022 </p>
-            <div class="table-background">
-                <table class="table table-hover agenda-table" id="april-4th-table">
-                    <thead>
-                    <tr>
-                        <th scope="col" class="table-header">Name</th>
-                        <th scope="col" class="table-header">Stage</th>
-                        <th scope="col" class="table-header">Primary Provider</th>
-                        <th scope="col" class="table-header">Path</th>
-                        <th scope="col" class="table-header">Rad</th>
-                        <th scope="col" class="table-header">Med Onc</th>
-                        <th scope="col" class="table-header">Rad Onc</th>
-                        <th scope="col" class="table-header">Surgery</th>
-                        <th scope="col" class="table-header">Derm</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row"> Kren, Jane</th>
-                        <td>pIB</td>
-                        <td>Wong</td>
-                        <td>DC22-94</td>
-                        <td>D22-4186</td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"> TD, James</th>
-                        <td>pIIA</td>
-                        <td>Wong</td>
-                        <td>DC35-60</td>
-                        <td>D48-1459</td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"> ST, Josh</th>
-                        <td>pIIIC</td>
-                        <td>Carroll</td>
-                        <td>DC60-49</td>
-                        <td>D13-4078</td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                        <td> <input type="checkbox"> </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="row">
-                    <div class="col-3">
-                        <button class="add-patient" onclick="window.location.href='patient-record.html'">
-                            <div class="row">
-                                <div class="col-3">
-                                    <img src="assets/plus_icon.svg" alt="plus icon"/>
-                                </div>
-                                <div class="col-9">
-                                    <p href="patient-record.html"> Add patient</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <br/><br/>
-        </div> 
+      <!-- April 4 agenda table -->
+      <div class="row agenda">
+          <p class="conference-date"> Apr 4, 2022 </p>
+          <div class="table-background">
+              <table class="table table-hover agenda-table" id="april-4th-table">
+                  <thead>
+                  <tr>
+                      <th scope="col" class="table-header">Name</th>
+                      <th scope="col" class="table-header">Stage</th>
+                      <th scope="col" class="table-header">Primary Provider</th>
+                      <th scope="col" class="table-header">Path</th>
+                      <th scope="col" class="table-header">Rad</th>
+                      <th scope="col" class="table-header">Med Onc</th>
+                      <th scope="col" class="table-header">Rad Onc</th>
+                      <th scope="col" class="table-header">Surgery</th>
+                      <th scope="col" class="table-header">Derm</th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-body">
+                    <!--This is where patients will be populated-->
+                  </tbody>
+              </table>
+              <div class="row">
+                  <div class="col-3">
+                      <button class="add-patient" onclick="window.location.href='patient-record.html'">
+                          <div class="row">
+                              <div class="col-3">
+                                  <img src="assets/plus_icon.svg" alt="plus icon"/>
+                              </div>
+                              <div class="col-9">
+                                  <p href="patient-record.html"> Add patient</p>
+                              </div>
+                          </div>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <br/><br/>
+      </div> 
 
 
 
 
-        <!-- March 28 table -->
-        <div class="row agenda">
-            <p class="conference-date"> March 28, 2022 </p>
-            <div class="table-background">
-                <table class="table table-hover agenda-table">
-                    <thead>
-                    <tr>
-                        <th scope="col" class="table-header">Name</th>
-                        <th scope="col" class="table-header">Stage</th>
-                        <th scope="col" class="table-header">Primary Provider</th>
-                        <th scope="col" class="table-header">Path</th>
-                        <th scope="col" class="table-header">Rad</th>
-                        <th scope="col" class="table-header">Med Onc</th>
-                        <th scope="col" class="table-header">Rad Onc</th>
-                        <th scope="col" class="table-header">Surgery</th>
-                        <th scope="col" class="table-header">Derm</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row"> Kren, Jane</th>
-                        <td>pIB</td>
-                        <td>Wong</td>
-                        <td>DC22-94</td>
-                        <td>D22-4186</td>
-                        <td> <img src="assets/checkbox.svg"> </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+      <!-- March 28 table -->
+      <div class="row agenda">
+          <p class="conference-date"> March 28, 2022 </p>
+          <div class="table-background">
+              <table class="table table-hover agenda-table">
+                  <thead>
+                  <tr>
+                      <th scope="col" class="table-header">Name</th>
+                      <th scope="col" class="table-header">Stage</th>
+                      <th scope="col" class="table-header">Primary Provider</th>
+                      <th scope="col" class="table-header">Path</th>
+                      <th scope="col" class="table-header">Rad</th>
+                      <th scope="col" class="table-header">Med Onc</th>
+                      <th scope="col" class="table-header">Rad Onc</th>
+                      <th scope="col" class="table-header">Surgery</th>
+                      <th scope="col" class="table-header">Derm</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <th scope="row"> Kren, Jane</th>
+                      <td>pIB</td>
+                      <td>Wong</td>
+                      <td>DC22-94</td>
+                      <td>D22-4186</td>
+                      <td> <img src="assets/checkbox.svg"> </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                  </tr>
 
-                    <tr>
-                        <th scope="row"> Kren, Jane</th>
-                        <td>pIB</td>
-                        <td>Wong</td>
-                        <td>DC22-94</td>
-                        <td>D22-4186</td>
-                        <td> </td>
-                        <td> </td>
-                        <td> <img src="assets/checkbox.svg"> </td>
-                        <td> </td>
-                    </tr>
+                  <tr>
+                      <th scope="row"> Kren, Jane</th>
+                      <td>pIB</td>
+                      <td>Wong</td>
+                      <td>DC22-94</td>
+                      <td>D22-4186</td>
+                      <td> </td>
+                      <td> </td>
+                      <td> <img src="assets/checkbox.svg"> </td>
+                      <td> </td>
+                  </tr>
 
-                    <tr>
-                        <th scope="row"> Kren, Jane</th>
-                        <td>pIB</td>
-                        <td>Wong</td>
-                        <td>DC22-94</td>
-                        <td>D22-4186</td>
-                        <td> <img src="assets/checkbox.svg"> </td>
-                        <td> </td>
-                        <td> <img src="assets/checkbox.svg"> </td>
-                        <td> <img src="assets/checkbox.svg"> </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="row">
-                    <div class="col-3">
-                        <button class="add-patient">
-                            <div class="row">
-                                <div class="col-3">
-                                    <img src="assets/plus_icon.svg" alt="plus icon"/>
-                                </div>
-                                <div class="col-9">
-                                    <p> Add patient</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <br/><br/><br/>
-        </div>
+                  <tr>
+                      <th scope="row"> Kren, Jane</th>
+                      <td>pIB</td>
+                      <td>Wong</td>
+                      <td>DC22-94</td>
+                      <td>D22-4186</td>
+                      <td> <img src="assets/checkbox.svg"> </td>
+                      <td> </td>
+                      <td> <img src="assets/checkbox.svg"> </td>
+                      <td> <img src="assets/checkbox.svg"> </td>
+                  </tr>
+                  </tbody>
+              </table>
+              <div class="row">
+                  <div class="col-3">
+                      <button class="add-patient">
+                          <div class="row">
+                              <div class="col-3">
+                                  <img src="assets/plus_icon.svg" alt="plus icon"/>
+                              </div>
+                              <div class="col-9">
+                                  <p> Add patient</p>
+                              </div>
+                          </div>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <br/><br/><br/>
+      </div>
 
-
-
-
-
+      <button id="authorize_button" style="display: none;">Authorize</button>
+      <button id="signout_button" style="display: none;">Sign Out</button><br>
 
     </div>
+    
 
 
 
@@ -224,8 +189,12 @@
 
 
 
-
+    <script type='text/javascript' src='js/config.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
   </body>
 </html>
