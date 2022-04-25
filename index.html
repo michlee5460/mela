@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MELA Prototype</title>
+    <link rel="stylesheet" href="css/test-styles.css">
+  </head>
+  <body>
+    <h1>MELA Prototype</h1>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button><br><br>
+
+    <h3>Data from <a href="https://docs.google.com/spreadsheets/d/1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8/edit#gid=0">Spreadsheet</a></h3>
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+    
+    <table id="sheet-data">
+      <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Likes dogs?</th>
+      </tr>
+    </table><br>
+
+
+    <table>
+      <tr>
+        <td>
+          <h3>Add Contact</h3>
+          <form id="form" autocomplete="off">
+            <label for="contact-name">Name:</label><br>
+            <input type="text" id="contact-name" name="contact-name"><br><br>
+            <label for="contact-number">Number:</label><br>
+            <input type="text" id="contact-number" name="contact-number"><br><br>
+            <input type="checkbox" id="likes-dogs" name="likes-dogs" value="dog">
+            <label for="likes-dogs"> I like dogs 🐶</label><br><br>
+            <input type="button" value="Submit" onclick="addContactToSheet()">
+          </form><br>
+        </td>
+        <td>
+          <h3>Update Contact</h3>
+          <form id="editform" autocomplete="off">
+            <label for="update-row">Row:</label><br>
+            <input type="text" id="update-row" name="update-row"><br><br>
+            <label for="contact-name-edit">Name:</label><br>
+            <input type="text" id="contact-name-edit" name="contact-name-edit"><br><br>
+            <label for="contact-number-edit">Number:</label><br>
+            <input type="text" id="contact-number-edit" name="contact-number-edit"><br><br>
+            <input type="checkbox" id="likes-dogs-edit" name="likes-dogs-edit" value="dog-edit">
+            <label for="likes-dogs-edit"> I like dogs 🐶</label><br><br>
+            <input type="button" value="Edit" onclick="updateContact()">
+          </form><br>
+        </td>
+      </tr>      
+    </table>
+
+    <script type='text/javascript' src='js/config.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>

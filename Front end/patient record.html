@@ -1,0 +1,384 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>MELA Tumor Board Workflow Tool</title>
+    <link rel="icon" href="asset/favicon.svg">
+  </head>
+
+
+  <body>
+      <!-- top navigation bar -->
+      <div class="navbar sticky-top">
+        <div class="container-lg">
+            <div class="col-2">
+              <a class="nav-link logo" aria-current="page" href="#">MELAbase</a>
+            </div>
+            <div class="col-3">
+              <div class="row">
+                <div class="col">
+                  <a class="nav-link active current-nav" href="index.html">Patient List</a>
+                </div>
+                <!-- <div class="col-2">
+                </div> -->
+                <div class="col">
+                  <a class="nav-link" aria-current="page" href="Tumor Board.html">Tumor board</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-3">
+              <div class="row">
+                <div class="col-6">
+                </div>
+                <div class="col-3">
+                  <img src="asset/profile.svg" alt="Top right profile picture"/>
+                </div>
+                <div class="col-3">
+                  <img src="asset/settings.svg" alt="Settings Icon"/>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    <div class="container-lg">
+      <br/><br/><br/><br/>
+      <form id="patient-record">
+        <p class="patient-record-title"> General Patient Information</p>
+        <div class="table-background">
+          <div class="row">
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label" for="patient-name">Patient Name</label>
+                <input type="name" class="form-control" id="patient-name">
+              </div>
+              <div class="form-group required">
+                <label class="control-label">Patient Sex</label>
+                <br/>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="male">
+                  <label class="form-check-label" for="male"> Male </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="female">
+                  <label class="form-check-label" for="female"> Female</label>
+                </div>
+
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label" for="patient-id">Patient ID</label>
+                <input class="form-control" id="patient-id">
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label" for="evaluation-no">Evaluation Number</label>
+                <br/>
+                <select class="custom-select" id="evaluation-no">
+                  <option selected value="1"> 1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <br/> <br/> <br/>
+              </div>
+            </div>
+            <div class="col-3">
+            </div>
+
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label" for="patient-name">Program Physicians</label> <br/>
+                <input class="form-check-input" type="checkbox" value="" id="Jeremy" checked>
+                <label class="form-check-label" for="Jeremy">
+                  Jeremy Bordeaux
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="other-program-physicians">
+                <label class="form-check-label" for="other-program-physicians">
+                  Other
+                </label>
+                <input class="form-control" id="other-program-physicians">
+              </div>
+
+              
+
+              <div class="form-group required">
+                <label class="control-label" for="referring-physicians">Referring Physicians</label>
+                <input class="form-control" id="referring-physicians">
+              </div>
+
+          </div>
+          </div>
+        </div>
+        <br/> <br/> <br/>
+
+        <p class="patient-record-title"> Assessment </p>
+        <div class="table-background">
+          <div class="row">
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label" for="anatomical-location">Anatomical Location</label>
+                <input class="form-control" id="anatomical-location">
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label" for="tumor-subtype">Tumor Subtype</label>
+                <input class="form-control" id="tumor-subtype">
+              </div>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label">Ulcerated</label>
+                <br/>
+
+                <div class="form-check form-check-inline ulcerated">
+                  <input class="form-check-input" type="radio" id="yes-ulcerated">
+                  <label class="form-check-label" for="yes-ulcerated"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="no-nonulcerated">
+                  <label class="form-check-label" for="no-nonulcerated"> No </label>
+                </div>
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label" for="breslow-depth">Breslow Depth (mm)</label>
+                <input class="form-control" id="breslow-depth">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group required">
+                <label for="additional-comment" class="not-required">Additional Comments</label>
+                <label class="control-label" for="additional-comment" style="font-style:italic"> (e.g. important clinical history)</label>
+                <textarea class="form-control" id="additional-comment" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          <br/> <br/>
+
+
+        </div>
+
+        <br/> <br/> <br/>
+
+        <p class="patient-record-title"> Patient History</p>
+        <div class="table-background">
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group required">
+                <label class="control-label" for="derm-history"> Dermatologic History</label>
+                <textarea class="form-control" id="derm-history" rows="3"></textarea>
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label" for="med-history">Past Medical History</label> <br/>
+                <input class="form-check-input" type="checkbox" value="" id="None">
+                <label class="form-check-label" for="None">
+                  None
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="high-bp">
+                <label class="form-check-label" for="high-bp">
+                  High Blood Pressure
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="diabetes">
+                <label class="form-check-label" for="diabetes">
+                  Diabetes
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="immuno-suppressed">
+                <label class="form-check-label" for="immuno-suppresseds">
+                  Immuno-suppressed
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="HIV">
+                <label class="form-check-label" for="HIV">
+                  HIV
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="ALL">
+                <label class="form-check-label" for="ALL">
+                  ALL
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="AML">
+                <label class="form-check-label" for="AML">
+                  AML
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="CLL">
+                <label class="form-check-label" for="CLL">
+                  CLL
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="CML">
+                <label class="form-check-label" for="CML">
+                  CML
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Non-Hodgkin-Lymphoma">
+                <label class="form-check-label" for="Non-Hodgkin-Lymphoma">
+                  Non-Hodgkin Lymphoma
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Hodgkin-Lymphoma">
+                <label class="form-check-label" for="Hodgkin-Lymphoma">
+                  Hodgkin Lymphoma
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="other-med-history">
+                <label class="form-check-label" for="other-med-history">
+                  Other
+                </label>
+                <label class="form-check-label specify" for="other-med-history">
+                  (please specify)
+                </label>
+                <input class="form-control" id="other-med-history">
+              </div>
+
+              <div class="form-group required">
+                <label class="control-label">Family History of DNS/MM</label>
+                <br/>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="positive">
+                  <label class="form-check-label" for="positive"> Positive </label>
+                  <label class="form-check-label specify" for="positive"> (please specify) </label>
+                </div>
+                <input class="form-control" for="positive" id="positive-fam-history">
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="negative">
+                  <label class="form-check-label" for="negative"> Negative </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="unknown">
+                  <label class="form-check-label" for="unknown"> Unknown</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="skin-exam" class="not-required">Skin Examination</label>
+                <textarea class="form-control" id="skin-exam" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="lymph-exam" class="not-required">Lymphatic Examination</label>
+                <textarea class="form-control" id="lymph-exam" rows="3"></textarea>
+              </div>
+
+
+            </div>
+          </div>
+          <br/> <br/>
+        </div>
+
+        <br/> <br/> <br/> 
+        <p class="patient-record-title"> Patient Report </p>
+
+        <div class="table-background">
+          <div class="row">
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label" for="path-code">Pathology Code</label>
+                <input class="form-control" id="path-code">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group required">
+                <label for="path-report" class="control-label">Pathlogy Report</label>
+                <textarea class="form-control" id="path-report" rows="8"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <button class="add-report">
+                <div class="row">
+                    <div class="col-1">
+                        <img src="asset/plus_icon.svg" alt="plus icon"/>
+                    </div>
+                    <div class="col-9">
+                        <p> Add a pathlogy report</p>
+                    </div>
+                </div>
+              </button>           
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3">
+              <div class="form-group required">
+                <label class="control-label" for="rad-code">Radiology Code</label>
+                <input class="form-control" id="rad-code">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-9">
+              <div class="form-group required">
+                <label for="rad-report" class="control-label">Radiology Report</label>
+                <textarea class="form-control" id="rad-report" rows="8"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <button class="add-report">
+                <div class="row">
+                    <div class="col-1">
+                        <img src="asset/plus_icon.svg" alt="plus icon"/>
+                    </div>
+                    <div class="col-9">
+                        <p> Add a radiology report</p>
+                    </div>
+                </div>
+              </button>           
+            </div>
+          </div>
+          <br/> <br/>
+
+        </div>
+
+
+
+      </form>
+      <br/> <br/> <br/> <br/> <br/>
+
+
+
+    </div>
+
+  
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
