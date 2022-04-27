@@ -201,6 +201,11 @@ body {
 
 /* Patient List page */
 
+
+.expand-icon{
+  margin-left: 1rem;
+}
+
 .form-control-underlined {
   border-width: 0;
   border-bottom-width: 1px;
@@ -221,6 +226,39 @@ body {
   padding-top: 0.5rem;
 }
 
+.rec-action{
+  padding-left: 1.6rem;
+  font-weight: 500;
+  color:#232D36;
+}
+
+.rec-code{
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #848484;
+}
+
+.rec-desc{
+  padding-left: 1.6rem;
+  color: #232D36;
+}
+
+.rec-title {
+  font-size: 1rem;
+  color: #848484;
+  border-style: none;
+  background-color: white;
+  padding-top: 1.5rem;
+  padding-left: 0;
+}
+
+.collapsed img {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 .search-bar-top {
   padding-top: 1rem;
@@ -232,3 +270,7 @@ body {
   margin-top: 2.3rem;
   margin-left: 1rem;
 }
+
+
+
+

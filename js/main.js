@@ -40,6 +40,14 @@ $('.datepicker').datepicker({
   });
 
 
+
+
+
+
+
+
+
+
 // ------------------------ BACK END ------------------------
 
 var CLIENT_ID = config.MY_CLIENT_ID;
