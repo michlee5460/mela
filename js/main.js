@@ -95,7 +95,7 @@ function handleSignoutClick(event) {
 
 function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm, MRN) {
   var rowHTML = "<tr>";
-  rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
+  rowHTML += ("<th scope=\"row\" class=\"name\">" + "<img class=\"six-dots\" src=\"assets/six_dots.svg\"\/>" +lastName + ", " + firstName + "</th>");
   rowHTML += "<td>" + stage + "</td>";
   rowHTML += "<td>" + primaryProvider + "</td>";
   console.log("MRN: " + MRN);
@@ -124,14 +124,19 @@ function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, 
   } else {
     rowHTML += "<td><input type=\"checkbox\" name=\"surg\" id=" + MRN + "></td>";
   }
+// attach three dots at the end
   if (needsDerm == "TRUE") {
-    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + " checked></td>";
+    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + " checked> <img class=\"three-dots\" src=\"assets/three_dots.svg\"\/></td>";
   } else {
-    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + "></td>";
+    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + "> <img class=\"three-dots\" src=\"assets/three_dots.svg\"\/></td>";
   }
   rowHTML += "</tr>";
   return rowHTML;
 }
+
+
+
+
 
 function deptToCol (department){
   if (department == "medonc"){

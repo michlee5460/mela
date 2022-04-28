@@ -63,9 +63,18 @@ body {
   font-size: 0.9rem;
 }
 
+
 .conference-date{
   /* margin-left: 12px; */
   font-style: italic;
+}
+
+.name {
+  padding-left: 0.5rem;
+}
+
+.six-dots {
+  display: none;
 }
 
 .table-background {
@@ -91,12 +100,38 @@ body {
   border-top: 1px solid #656C72;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  cursor: grab;
+}
+
 tbody, td, tfoot, th, thead, tr {
   border-color: inherit;
   /* border-style: solid; */
   border-width: 0;
   border-style: none;
 }
+
+.table-hover tbody tr:hover td .three-dots{
+
+  display: flex;
+  float: right;
+  /* padding-top: 0.4rem; */
+  cursor: pointer;
+}
+
+.table-hover tbody tr:hover th .six-dots{
+  display: inline;
+  margin-left: -0.8rem;
+  margin-right: 0.35rem;
+  /* padding-top: 0.4rem; */
+}
+
+.three-dots {
+  display: none;
+  margin-left: -0.8rem;
+  margin-right: 0.35rem;
+}
+
 
 
 /* patient record page */
@@ -193,6 +228,10 @@ tbody, td, tfoot, th, thead, tr {
 .specify {
   font-style: italic;
   font-size: 0.8rem;
+}
+
+th{
+  font-weight: 600;
 }
 
 .ulcerated {
