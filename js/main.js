@@ -52,6 +52,7 @@ $('.datepicker').datepicker({
 
 var CLIENT_ID = config.MY_CLIENT_ID;
 var API_KEY = config.MY_API_KEY;
+console.log("hi " + CLIENT_ID);
 var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 var SHEET_ID = "1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8";
