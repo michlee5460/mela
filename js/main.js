@@ -41,13 +41,6 @@ $('.datepicker').datepicker({
 
 
 
-
-
-
-
-
-
-
 // ------------------------ BACK END ------------------------
 
 var CLIENT_ID = config.MY_CLIENT_ID;
@@ -105,7 +98,7 @@ function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, 
   rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
   rowHTML += "<td>" + stage + "</td>";
   rowHTML += "<td>" + primaryProvider + "</td>";
-  console.log(MRN);
+  console.log("MRN: " + MRN);
   if (pathCode != undefined) {
     rowHTML += "<td>" + pathCode + "</td>";
   } else {
@@ -159,7 +152,6 @@ function makeRowNotEditable(lastName, firstName, stage, primaryProvider, pathCod
   rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
   rowHTML += "<td>" + stage + "</td>";
   rowHTML += "<td>" + primaryProvider + "</td>";
-  console.log(pathCode);
   if (pathCode != undefined) {
     rowHTML += "<td>" + pathCode + "</td>";
   } else {
@@ -217,9 +209,9 @@ function listPatients() {
       var checkboxes = document.querySelectorAll('input[type=checkbox]');
       for(var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener('change', function(checkbox){
-          console.log(this.checked);
-          console.log('the checkbox changed');
-          console.log(this.name);
+          console.log('the checkbox changed to ' + this.checked);
+          console.log('for the patient with MRN ' + this.id);
+          console.log('for the department ' + this.name);
           updateCheck(this.id, this.checked, this.name);
         });
       }
@@ -231,41 +223,32 @@ function listPatients() {
   });
 }
 
-// get all checkboxes on tumor board page
-var checkboxes = document.querySelectorAll('input[type=checkbox]');
-console.log(checkboxes);
-
 // add a change event listener
 function updateCheck(MRN, isChecked, dept){
-  console.log(isChecked);
+  console.log("updating: i got that the box status is: " + isChecked);
+
+  // calculate what row has the MRN
   var body = {"values": [["=MATCH(" + MRN + ", PatientData!L:L, 0)"]]}
   gapi.client.sheets.spreadsheets.values.update({
     spreadsheetId: SHEET_ID,
     range: 'LookUp!A2',
     valueInputOption: 'USER_ENTERED',
+    includeValuesInResponse: true,
     resource: body
   }).then((response) => {
-   var result = response.result;
-   console.log("added");
-  });
-  
-  // get matched row
-  var params = {spreadsheetId: SHEET_ID, range: 'LookUp!A2'};
-  var request = gapi.client.sheets.spreadsheets.values.get(params);
-  request.then(function(response) {
-    console.log(response.result.values[0][0]);
-    var rowToUpdate = response.result.values[0][0];
-    console.log(rowToUpdate + dept);
-    console.log(deptToCol(dept));
-
-      // update correct cell
-    gapi.client.sheets.spreadsheets.values.update({
-      spreadsheetId: SHEET_ID,
-      range: 'PatientData!' + deptToCol(dept) + rowToUpdate,
-      valueInputOption: 'USER_ENTERED',
-      resource: {"values": [[isChecked]]}
+   console.log("updated lookup sheet " + response.result.updatedData.values);
+   
+   // get which row needs to be updated
+   var rowToUpdate = response.result.updatedData.values;
+   
+   // update the cell
+   gapi.client.sheets.spreadsheets.values.update({
+    spreadsheetId: SHEET_ID,
+    range: 'PatientData!' + deptToCol(dept) + rowToUpdate,
+    valueInputOption: 'USER_ENTERED',
+    resource: {"values": [[isChecked]]}
     }).then((response) => {
-      console.log("updated");
+      console.log("finished updating");
     });
   });
 }
