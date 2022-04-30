@@ -27,7 +27,6 @@
     <div class="navbar sticky-top">
     <div class="container-lg">
         <div class="col-1">
-            <!-- <a class="nav-link logo" aria-current="page" href="#">MELAbase</a> -->
             <img class="logo" src="assets/logo.svg" />
         </div>
         <div class="col-4">
@@ -35,8 +34,6 @@
             <div class="col">
                 <a class="nav-link" href="index.html">Patient List</a>
             </div>
-            <!-- <div class="col-2">
-            </div> -->
             <div class="col">
                 <a class="nav-link active current-nav" aria-current="page" href="tumor-board.html">Tumor board</a>
             </div>
@@ -59,6 +56,7 @@
     </div>
 
     <div class="container-lg">
+        <!-- current conference table -->
       <div class="row agenda">
           <p class="conference-date"> Apr 4, 2022 </p>
           <div class="table-background">
@@ -74,74 +72,18 @@
                       <th scope="col" class="table-header">Rad Onc</th>
                       <th scope="col" class="table-header">Surgery</th>
                       <th scope="col" class="table-header">Derm</th>
-                      <!-- <th scope="col">
-                        <div class="dropdown">
-                            <button class="tb-dropdown" id="tb-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/three_dots.svg" />
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="tb-dropdown">
-                                <li class="dropdown-row">
-                                    <img class="dropdown-icon" src="assets/arrow-up.svg"/>
-                                    <a class="dropdown-item" href="#">Move to Top</a>
-                                </li>
-                                <li class="dropdown-row">
-                                    <img class="dropdown-icon" src="assets/delete-patient.svg"/>
-                                    <a class="dropdown-item" href="#">Remove Patient</a>
-                                </li>
-                                <li>
-                                    <img class="dropdown-icon" src="assets/calendar.svg"/>
-                                    <a class="dropdown-item" href="#">Change date</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </th> -->
                   </tr>
                   </thead>
                   <tbody id="table-body-editable">
                     <!--This is where patients will be populated-->
                   </tbody>
               </table>
-
-              <div class="dropdown">
-                <button class="tb-dropdown" id="tb-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="assets/three_dots.svg" />
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="tb-dropdown">
-                    <li class="dropdown-row">
-                        <img class="dropdown-icon" src="assets/arrow-up.svg"/>
-                        <a class="dropdown-item" href="#">Move to Top</a>
-                    </li>
-                    <li class="dropdown-row">
-                        <img class="dropdown-icon" src="assets/delete-patient.svg"/>
-                        <a class="dropdown-item" href="#">Remove Patient</a>
-                    </li>
-                    <li>
-                        <img class="dropdown-icon" src="assets/calendar.svg"/>
-                        <a class="dropdown-item" href="#">Change date</a>
-                    </li>
-                </ul>
-              </div>
-
-              <!--
-              <div class="row">
-                  <div class="col-3">
-                      <button class="add-patient" onclick="window.location.href='patient-record.html'">
-                          <div class="row">
-                              <div class="col-3">
-                                  <img src="assets/plus_icon.svg" alt="plus icon"/>
-                              </div>
-                              <div class="col-9">
-                                  <p href="patient-record.html"> Add patient</p>
-                              </div>
-                          </div>
-                      </button>
-                  </div>
-              </div>-->
-          </div>
-          <br/><br/>
-      </div> 
+            </div>
+            <br/><br/><br/>
+        </div>
 
       <div class="row agenda">
+          <!-- past conference table -->
           <p class="conference-date"> March 28, 2022 </p>
           <div class="table-background">
               <table class="table table-hover agenda-table">
@@ -162,21 +104,6 @@
                     <!--This is where sheet data will populate table-->
                   </tbody>
               </table>
-              <!--
-              <div class="row">
-                  <div class="col-3">
-                      <button class="add-patient">
-                          <div class="row">
-                              <div class="col-3">
-                                  <img src="assets/plus_icon.svg" alt="plus icon"/>
-                              </div>
-                              <div class="col-9">
-                                  <p> Add patient</p>
-                              </div>
-                          </div>
-                      </button>
-                  </div>
-              </div>-->
           </div>
           <br/><br/><br/>
       </div>
@@ -186,15 +113,6 @@
 
     </div>
     
-
-
-
-
-
-  
-
-
-
     <script type='text/javascript' src='js/config.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>

@@ -27,7 +27,6 @@
     <div class="navbar sticky-top">
       <div class="container-lg">
           <div class="col-1">
-              <!-- <a class="nav-link logo" aria-current="page" href="#">MELAbase</a> -->
               <img class="logo" src="assets/logo.svg" />
           </div>
           <div class="col-4">
@@ -35,8 +34,6 @@
               <div class="col">
                   <a class="nav-link active current-nav" href="index.html">Patient List</a>
               </div>
-              <!-- <div class="col-2">
-              </div> -->
               <div class="col">
                   <a class="nav-link" aria-current="page" href="tumor-board.html">Tumor board</a>
               </div>
@@ -58,6 +55,7 @@
       </div>
       </div>
 
+<!-- top search bar & CTA-->
       <div class="search-bar-top">
         <div class="container-lg">
           <div class="row">
@@ -69,17 +67,106 @@
                 <div class="form-group col-10">
                   <input id="exampleFormControlInput5" type="email" placeholder="Search for patient cases..." class="form-control form-control-underlined">
                 </div>
-
               </div>
             </div>
             <div class="col-5"></div>
             <div class="col-3">
-              <button class="primary-button float-end" style="margin-top:1.4rem;">
+              <button onclick="window.location.href='patient-record.html'" class="primary-button float-end" style="margin-top:1.4rem;">
                 <p> Add a new patient </p>
               </button>
             </div>
           </div>
         </div>
+      </div>
+
+
+<!-- patient list table -->
+    <div class="container-lg">
+          <div class="table-background">
+              <table class="table table-hover agenda-table" id="patient-list-table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="table-header">Name</th>
+                      <th scope="col" class="table-header">Sex</th>
+                      <th scope="col" class="table-header">Age</th>
+                      <th scope="col" class="table-header">Location</th>
+                      <th scope="col" class="table-header">Stage</th>
+                      <th scope="col" class="table-header">Conference Date</th>
+                      <th scope="col" class="table-header">Status</th>
+                      <th scope="col" class="table-header">
+                        <img src="assets/sliders.svg"/>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="patient-list-body-table">
+                    <!--This is where patients will be populated-->
+                    <tr>
+                      <th scope="row"> Kren, Jane </th>
+                      <td> F </td>
+                      <td> 43 </td>
+                      <td> Left Forearm </td>
+                      <td> cIV </td>
+                      <td> 04/04/2022 </td>
+                      <td class="patient-status">
+                        <img src="assets/incomplete.svg" />
+                        <p class="status"> Incomplete</p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row"> Kren, Jane </th>
+                      <td> F </td>
+                      <td> 43 </td>
+                      <td> Left Forearm </td>
+                      <td> cIV </td>
+                      <td> 04/04/2022 </td>
+                      <td class="patient-status">
+                        <img src="assets/ready_for_TB.svg" />
+                        <p class="status"> Ready for TB</p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row"> Kren, Jane </th>
+                      <td> F </td>
+                      <td> 43 </td>
+                      <td> Left Forearm </td>
+                      <td> cIV </td>
+                      <td> 04/04/2022 </td>
+                      <td class="patient-status">
+                        <img src="assets/reviewed.svg" />
+                        <p class="status"> Reviewed</p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row"> Kren, Jane </th>
+                      <td> F </td>
+                      <td> 43 </td>
+                      <td> Left Forearm </td>
+                      <td> cIV </td>
+                      <td> 04/04/2022 </td>
+                      <td class="patient-status">
+                        <img src="assets/workup.svg" />
+                        <p class="status"> Additional Workup</p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row"> Kren, Jane </th>
+                      <td> F </td>
+                      <td> 43 </td>
+                      <td> Left Forearm </td>
+                      <td> cIV </td>
+                      <td> 04/04/2022 </td>
+                      <td class="patient-status">
+                        <img src="assets/deceased.svg" />
+                        <p class="status"> Deceased </p>
+                      </td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
       </div>
 
   

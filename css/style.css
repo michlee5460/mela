@@ -287,7 +287,13 @@ th{
 }
 
 /* Patient List page */
-
+.collapsed img {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 .expand-icon{
   margin-left: 1rem;
@@ -339,18 +345,15 @@ th{
   padding-left: 0;
 }
 
-.collapsed img {
-  -webkit-transform:rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
 .search-bar-top {
   padding-top: 1rem;
   background-color: #F8F8F6;
   padding-bottom: 2rem;
+}
+
+.status {
+  display: inline;
+  padding-left: 0.5rem;
 }
 
 #search-icon {
