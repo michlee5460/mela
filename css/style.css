@@ -69,6 +69,21 @@ body {
   font-style: italic;
 }
 
+
+.dropdown-item {
+  display: inline;
+}
+
+.dropdown-icon {
+  margin-left: 1.2rem;
+  /* margin-right: 1rem; */
+  display: inline;
+}
+
+.dropdown-row {
+  padding-bottom: 1rem;
+}
+
 .name {
   padding-left: 0.5rem;
 }
@@ -121,9 +136,14 @@ tbody, td, tfoot, th, thead, tr {
 
 .table-hover tbody tr:hover th .six-dots{
   display: inline;
-  margin-left: -0.8rem;
-  margin-right: 0.35rem;
+  margin-left: -1.1rem;
+  margin-right: 0.22rem;
   /* padding-top: 0.4rem; */
+}
+
+.tb-dropdown {
+  border: none;
+  background-color: white;
 }
 
 .three-dots {

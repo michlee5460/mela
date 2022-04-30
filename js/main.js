@@ -40,6 +40,7 @@ $('.datepicker').datepicker({
   });
 
 
+// $('.dropdown-toggle').dropdown("toggle");
 
 // ------------------------ BACK END ------------------------
 
