@@ -125,11 +125,12 @@ function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, 
   } else {
     rowHTML += "<td><input type=\"checkbox\" name=\"surg\" id=" + MRN + "></td>";
   }
-// attach three dots at the end
+// attach three dots and dropdown at the end (sorry bad code style..)
   if (needsDerm == "TRUE") {
-    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + " checked> <img class=\"three-dots\" src=\"assets/three_dots.svg\"\/></td>";
+    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + " checked> <div class=\"dropdown\"> <button class=\"tb-dropdown\" id=\"tb-dropdown\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\"> <img class=\"three-dots\" src=\"assets/three_dots.svg\" /></button> <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"tb-dropdown\"> <li class=\"dropdown-row \"> <img class=\"dropdown-icon\" src=\"assets/arrow-up.svg\"/> <a class=\"dropdown-item\">Move to Top </a> </li> <li class=\"dropdown-row \"> <img class=\"dropdown-icon\" src=\"assets/delete-patient.svg\"/> <a class=\"dropdown-item\"> Remove Patient</a> </li> <li> <img class=\"dropdown-icon\" src=\"assets/calendar.svg\"/> <a class=\"dropdown-item\">Change Date </a> </li> </ul></div></td>"
+
   } else {
-    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + "> <img class=\"three-dots\" src=\"assets/three_dots.svg\"\/></td>";
+    rowHTML += "<td><input type=\"checkbox\" name=\"derm\" id=" + MRN + "> <div class=\"dropdown\"> <button class=\"tb-dropdown\" id=\"tb-dropdown\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\"> <img class=\"three-dots\" src=\"assets/three_dots.svg\" /></button> <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"tb-dropdown\"> <li class=\"dropdown-row \"> <img class=\"dropdown-icon\" src=\"assets/arrow-up.svg\"/> <a class=\"dropdown-item\">Move to Top </a> </li> <li class=\"dropdown-row \"> <img class=\"dropdown-icon\" src=\"assets/delete-patient.svg\"/> <a class=\"dropdown-item\"> Remove Patient</a> </li> <li> <img class=\"dropdown-icon\" src=\"assets/calendar.svg\"/> <a class=\"dropdown-item\">Change Date </a> </li> </ul></div></td>"
   }
   rowHTML += "</tr>";
   return rowHTML;
