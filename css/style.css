@@ -189,6 +189,7 @@ tbody, td, tfoot, th, thead, tr {
   text-align: center;
   padding-top: 0.5rem;
   font-weight: 500;
+  font-size: 0.8rem;
 }
 
 .form-check-label {
@@ -223,7 +224,7 @@ tbody, td, tfoot, th, thead, tr {
 
 .patient-record-title {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .patient-record-top{
