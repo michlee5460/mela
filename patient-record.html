@@ -28,7 +28,6 @@
       <div class="navbar sticky-top">
         <div class="container-lg">
             <div class="col-1">
-                <!-- <a class="nav-link logo" aria-current="page" href="#">MELAbase</a> -->
                 <img class="logo" src="assets/logo.svg" />
             </div>
             <div class="col-4">
@@ -36,8 +35,6 @@
                 <div class="col">
                     <a class="nav-link active current-nav" href="index.html">Patient List</a>
                 </div>
-                <!-- <div class="col-2">
-                </div> -->
                 <div class="col">
                     <a class="nav-link" aria-current="page" href="tumor-board.html">Tumor board</a>
                 </div>
@@ -58,19 +55,17 @@
             </div>
         </div>
         </div>
-
+        <!-- sticky CTAs and back button -->
         <div class="patient-record-top">
           <div class="container-lg">
             <div class="row">
               <div class="col">
                 <img id="back-icon" src="assets/back_icon.svg"/>
-                <p class="back-title"> Back </p>
+                <p class="back-title" onclick="window.location.href='index.html'"> Back </p>
               </div>
             </div>
             <div class="row new-patient">
               <div class="col-3">
-                <!-- <img id="back-icon" src="assets/back_icon.svg"/>
-                <p class="back-title"> Back </p> -->
                 <p id="add-new-patient"> ADD NEW PATIENT </p>
               </div>
               <div class="col-5"></div>
@@ -90,6 +85,7 @@
       </div>
     </div>
 
+    <!-- general patient info -->
     <div class="container-lg">
       <br/>
       <form id="patient-record">
@@ -106,24 +102,6 @@
                 <input type="name" class="form-control" id="patient-name">
               </div>
               <br/> <br/>
-
-              <!-- <div class="form-group required">
-                <label class="control-label" for="evaluation-no">Evaluation Number</label>
-                <br/>
-                <select class="custom-select" id="evaluation-no">
-                  <option selected value="1"> 1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <br/> <br/> <br/>
-              </div> -->
             </div>
             <div class="col-3">
             </div>
@@ -151,8 +129,16 @@
         </div>
         <br/> <br/> <br/>
 
-
+        <!-- tumor board info -->
         <p class="patient-record-title"> Tumor Board Information</p>
+        <div class="row">
+          <div class="col-1 section-nav">
+            <p class="eval"> EVAL 1</p>
+          </div>
+          <div class="col-1 plus_icon">
+            <img src="assets/plus.svg"/>
+          </div>
+        </div>
         <div class="table-background">
           <div class="row">
             <div class="col-3">
@@ -186,8 +172,16 @@
         <br/><br/><br/>
 
 
-
+        <!-- assessment -->
         <p class="patient-record-title"> Assessment </p>
+        <div class="row">
+          <div class="col-1 section-nav">
+            <p class="eval"> EVAL 1</p>
+          </div>
+          <div class="col-1 plus_icon">
+            <img src="assets/plus.svg"/>
+          </div>
+        </div>
         <div class="table-background">
           <div class="row">
             <div class="col-3">
@@ -230,18 +224,47 @@
               <div class="form-group required">
                 <label class="control-label">Lymph Node</label>
                 <br/>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="lymph-yes">
-                  <label class="form-check-label" for="lymph-yes"> Yes </label>
-                  <label class="form-check-label specify" for="lymph-yes"> (please specify) </label>
-                </div>
+                <input class="form-check-input" type="checkbox" value="" id="head-and-neck">
+                <label class="form-check-label" for="head-and-neck">
+                  Head and Neck
+                </label><br/>&emsp;
+                <input class="form-check-input" type="checkbox" value="" id="cervical">
+                <label class="form-check-label" for="cervical">
+                  Cervical
+                </label><br/>&emsp;
+                <input class="form-check-input" type="checkbox" value="" id="pre-auricular">
+                <label class="form-check-label" for="pre-auricular">
+                  Pre-auricular
+                </label><br/>&emsp;
+                <input class="form-check-input" type="checkbox" value="" id="Submandibular">
+                <label class="form-check-label" for="Submandibular">
+                  Submandibular
+                </label><br/>&emsp;
+                <input class="form-check-input" type="checkbox" value="" id="Supraclavicular">
+                <label class="form-check-label" for="Supraclavicular">
+                  Supraclavicular
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Axillary">
+                <label class="form-check-label" for="Axillary">
+                  Axillary
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Antecubital">
+                <label class="form-check-label" for="Antecubital">
+                  Antecubital
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Inguinal">
+                <label class="form-check-label" for="Inguinal">
+                  Inguinal
+                </label><br/>
+                <input class="form-check-input" type="checkbox" value="" id="Popliteal">
+                <label class="form-check-label" for="Popliteal">
+                  Popliteal
+                </label><br/>
                 <input class="form-control" for="lymph-yes" id="with-lymph-node"> <br/>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="RadioOptions" id="lymph-no">
-                  <label class="form-check-label" for="lymph-no"> No </label>
-                  <label class="form-check-label specify" for="lymph-no"> (please specify) </label>
+                  <label class="form-check-label" for="lymph-no"> Not clinically evaluated </label>
                 </div>
-                <input class="form-control" for="lymph-no" id="without-lymph-node">
               </div>
 
 
@@ -259,7 +282,7 @@
         </div>
 
         <br/> <br/> <br/>
-
+        <!-- patient history -->
         <p class="patient-record-title"> Patient History</p>
         <div class="table-background">
           <div class="row">
@@ -363,80 +386,16 @@
         </div>
         <br/> <br/> <br/> 
 
-        <p class="patient-record-title"> Staging </p>
-        <div class="table-background">
-          <div class="row">
-            <div class="col-4">
-              <div class="form-group required">
-                <label class="control-label" for="t-stage">T Stage</label>
-                <br/>
-                <select class="custom-select" id="t-stage">
-                  <option>
-                    <p> T</p>
-                    <p class="specify">-select</p>
-                  </option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <br/> <br/> <br/>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="form-group required">
-                <label class="control-label" for="evaluation-no">Evaluation Number</label>
-                <br/>
-                <select class="custom-select" id="evaluation-no">
-                  <option>
-                    <p> T</p>
-                    <p class="specify"> -select</p>
-                  </option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <br/> <br/> <br/>
-              </div>
-            </div>
-
-            <div class="col-4">
-              <div class="form-group required">
-                <label class="control-label" for="evaluation-no">Evaluation Number</label>
-                <br/>
-                <select class="custom-select" id="evaluation-no">
-                  <option selected value="1"> 1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <br/> <br/> <br/>
-              </div>
-            </div>
-
+        <!-- patient report -->
+        <p class="patient-record-title"> Patient Report </p>
+        <div class="row">
+          <div class="col-1 section-nav">
+            <p class="eval"> EVAL 1</p>
+          </div>
+          <div class="col-1 plus_icon">
+            <img src="assets/plus.svg"/>
           </div>
         </div>
-        <br/><br/><br/>
-
-
-        <p class="patient-record-title"> Patient Report </p>
 
         <div class="table-background">
           <div class="row">
@@ -454,21 +413,7 @@
                 <textarea class="form-control" id="path-report" rows="8"></textarea>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <button class="add-report">
-                <div class="row">
-                    <div class="col-1">
-                        <img src="assets/plus_icon.svg" alt="plus icon"/>
-                    </div>
-                    <div class="col-9">
-                        <p> Add a pathlogy report</p>
-                    </div>
-                </div>
-              </button>           
-            </div>
-          </div>
+          </div> <br/> 
 
           <div class="row">
             <div class="col-3">
@@ -486,26 +431,104 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-3">
-              <button class="add-report">
-                <div class="row">
-                    <div class="col-1">
-                        <img src="assets/plus_icon.svg" alt="plus icon"/>
-                    </div>
-                    <div class="col-9">
-                        <p> Add a radiology report</p>
-                    </div>
-                </div>
-              </button>           
-            </div>
-          </div>
           <br/> <br/>
 
         </div>
 
         <br/> <br/> <br/> 
+
+
+        <!-- staging -->
+        <p class="patient-record-title"> Staging </p>
+        <div class="row">
+          <div class="col-1 section-nav">
+            <p class="eval"> EVAL 1</p>
+          </div>
+          <div class="col-1 plus_icon">
+            <img src="assets/plus.svg"/>
+          </div>
+        </div>
+        <div class="table-background">
+          <div class="row">
+            <div class="col-4">
+              <div class="form-group required">
+                <label class="control-label" for="t-stage">T Stage</label>
+                <br/>
+                <select class="custom-select" id="t-stage">
+                  <option>
+                    <p> T &nbsp; - &nbsp; select</p>
+                  </option>
+                  <option>TX</option>
+                  <option>Tis</option>
+                  <option>T1a</option>
+                  <option>T1b</option>
+                  <option>T2a</option>
+                  <option>T2b</option>
+                  <option>T3a</option>
+                  <option>T3b</option>
+                  <option>T4a</option>
+                  <option>T4b</option>
+
+                </select>
+                <br/> <br/> <br/>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group required">
+                <label class="control-label" for="n-stage">N Stage</label>
+                <br/>
+                <select class="custom-select" id="nn-stage">
+                  <option>
+                    <p> N &nbsp; - &nbsp; select</p>
+                  </option>
+                  <option>NX</option>
+                  <option>N0</option>
+                  <option>N1a</option>
+                  <option>N1b</option>
+                  <option>N1c</option>
+                  <option>N2a</option>
+                  <option>N2b</option>
+                  <option>N2c</option>
+                  <option>N3a</option>
+                  <option>N3b</option>
+                  <option>N3c</option>
+
+                </select>
+                <br/> <br/> <br/>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="form-group required">
+                <label class="control-label" for="m-stage">M Stage</label>
+                <br/>
+                <select class="custom-select" id="m-stage">
+                  <option>  
+                    <p> M &nbsp; - &nbsp; select</p>
+                  </option>
+                  <option>MX</option>
+                  <option>M0</option>
+                  <option>M1</option>
+                  
+                </select>
+                <br/> <br/> <br/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <br/><br/><br/>
+
+        <!-- recommendation -->
         <p class="patient-record-title"> Recommendation </p>
+        <div class="row">
+          <div class="col-1 section-nav">
+            <p class="eval"> EVAL 1</p>
+          </div>
+          <div class="col-1 plus_icon">
+            <img src="assets/plus.svg"/>
+          </div>
+        </div>
         <div class="table-background">
           <div class="row">
             <div class="col-9">
@@ -642,12 +665,6 @@
     </div>
 
   
-
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

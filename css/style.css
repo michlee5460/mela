@@ -5,7 +5,6 @@ body {
 }
 
 .current-nav{
-  /* border-bottom: 2px solid #556EF2; */
   text-align: center;
   color: #556EF2 !important;
   font-weight: 600;
@@ -20,11 +19,6 @@ body {
 .navbar{
   background-color: #F8F8F6;
   box-shadow: 0px 2px 3px rgba(0,0,0,0.07);
-  /* width: 100%;
-  padding-right: var(--bs-gutter-x,.75rem);
-  padding-left: var(--bs-gutter-x,.75rem);
-  margin-right: auto;
-  margin-left: auto; */
 }
 
 .nav-link {
@@ -35,15 +29,12 @@ body {
 
 
 /* tumor board page */
-
-
 .add-patient{
   border: none;
   background-color: white;
   color: #556EF2;
   font-weight: 600;
   display: inline;
-  /* margin-left: 15px; */
   text-align: center;
 }
 
@@ -54,8 +45,6 @@ body {
 
 .agenda-table {
   margin-top: 15px !important;
-  /* margin-left: 12px;
-  margin-right: 12px; */
   border-radius: 5px;
   background-color: white;
   border-top: none !important;
@@ -65,7 +54,6 @@ body {
 
 
 .conference-date{
-  /* margin-left: 12px; */
   font-style: italic;
 }
 
@@ -106,9 +94,7 @@ body {
 
 .table-background {
   background-color: white;
-  /* margin-left: 16px; */
   border-radius: 5px;
-  margin-top: 15px;
   padding-left: 20px;
   padding-right:20px;
 }
@@ -135,7 +121,6 @@ body {
 
   display: flex;
   float: right;
-  /* padding-top: 0.4rem; */
   cursor: pointer;
 }
 
@@ -150,32 +135,26 @@ body {
   display: inline;
   margin-left: -1.1rem;
   margin-right: 0.22rem;
-  /* padding-top: 0.4rem; */
 }
 
 .tb-dropdown {
   border: none;
   display: none;
-  /* background-color: white; */
 }
 
 tbody, td, tfoot, th, thead, tr {
   border-color: inherit;
-  /* border-style: solid; */
   border-width: 0;
   border-style: none;
 }
 
 .three-dots {
   display: none;
-  /* margin-left: -0.8rem;
-  margin-right: 0.35rem; */
 }
 
 
 
 /* patient record page */
-
 
 .add-report{
   margin-top: 1rem;
@@ -185,12 +164,12 @@ tbody, td, tfoot, th, thead, tr {
   color: #556EF2;
   font-weight: 600;
   display: inline;
-  /* margin-left: 15px; */
   text-align: center;
 }
 
 .back-title {
   display: inline;
+  cursor: pointer;
 }
 
 .control-label {
@@ -204,6 +183,12 @@ tbody, td, tfoot, th, thead, tr {
   padding: 0.375rem 0.75rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+}
+
+.eval{
+  text-align: center;
+  padding-top: 0.5rem;
+  font-weight: 500;
 }
 
 .form-check-label {
@@ -237,7 +222,6 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 .patient-record-title {
-  /* margin-left: 15px; */
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -246,6 +230,10 @@ tbody, td, tfoot, th, thead, tr {
   padding-top: 1.5rem;
   background-color: #F8F8F6;
   padding-bottom: 1.5rem;
+}
+
+.plus_icon {
+  margin-top: 14px;
 }
 
 .primary-button {
@@ -257,6 +245,16 @@ tbody, td, tfoot, th, thead, tr {
   background-color: #556EF2;
   color: #FFFFFF;
   padding-top: 0.5rem;
+}
+
+.section-nav{
+  margin-top: 10px;
+  background-color: #FDFDFC;
+  padding-left: 20px;
+  margin-left: 0.8rem;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .secondary-button {
@@ -293,10 +291,6 @@ th{
 
 }
 
-/* #back-icon{
-  margin-left: 15px;
-} */
-
 #patient-record{
   font-size: 0.9rem;
 }
@@ -304,6 +298,7 @@ th{
 #positive-fam-history{
   margin-bottom: 0.5rem;
 }
+
 
 /* Patient List page */
 .collapsed img {
