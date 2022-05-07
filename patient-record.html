@@ -93,26 +93,15 @@
         <div class="table-background">
           <div class="row">
             <div class="col-3">
-              <div class="form-group required">
-                <label class="control-label" for="patient-id">Patient ID</label>
+              <div class="form-group">
+                <label class="control-label" for="patient-id">ID</label>
                 <input class="form-control" id="patient-id">
               </div>
-              <div class="form-group required">
-                <label class="control-label" for="patient-name">Patient Name</label>
+              <div class="form-group">
+                <label class="control-label" for="patient-name">Last Name</label>
                 <input type="name" class="form-control" id="patient-name">
               </div>
-              <br/> <br/>
-            </div>
-            <div class="col-3">
-            </div>
-
-            <div class="col-3">
-              <div class="form-group required">
-                <label class="control-label" for="DOB">Patient Date of Birth</label>
-                <input class="form-control" type="date" id="DOB">
-              </div>
-
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label">Patient Sex</label>
                 <br/>
                 <div class="form-check form-check-inline">
@@ -124,6 +113,21 @@
                   <label class="form-check-label" for="female"> Female</label>
                 </div>
               </div>
+              <br/> <br/>
+            </div>
+            <div class="col-3">
+            </div>
+
+            <div class="col-3">
+              <div class="form-group">
+                <label class="control-label" for="DOB">Patient Date of Birth</label>
+                <input class="form-control" type="date" id="DOB">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="patient-name">First Name</label>
+                <input type="name" class="form-control" id="patient-name">
+              </div>
+
           </div>
           </div>
         </div>
@@ -133,7 +137,7 @@
         <p class="patient-record-title"> Tumor Board Information</p>
         <div class="row">
           <div class="col-1 section-nav">
-            <p class="eval"> EVAL 1</p>
+            <p class="eval"> Untitled</p>
           </div>
           <div class="col-1 plus_icon">
             <img src="assets/plus.svg"/>
@@ -142,11 +146,11 @@
         <div class="table-background">
           <div class="row">
             <div class="col-3">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="conference-date">Conference Date</label>
                 <input class="form-control" type="date" id="conference-date">
               </div>
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="referring-physicians">Referring Physicians</label>
                 <input class="form-control" id="referring-physicians">
               </div>
@@ -154,7 +158,7 @@
             </div>
             <div class="col-3"></div>
             <div class="col-3">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="patient-name">Program Physicians</label> <br/>
                 <input class="form-check-input" type="checkbox" value="" id="Jeremy" checked>
                 <label class="form-check-label" for="Jeremy">
@@ -176,7 +180,7 @@
         <p class="patient-record-title"> Assessment </p>
         <div class="row">
           <div class="col-1 section-nav">
-            <p class="eval"> EVAL 1</p>
+            <p class="eval"> Untitled</p>
           </div>
           <div class="col-1 plus_icon">
             <img src="assets/plus.svg"/>
@@ -185,23 +189,13 @@
         <div class="table-background">
           <div class="row">
             <div class="col-3">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="anatomical-location">Anatomical Location</label>
                 <input class="form-control" id="anatomical-location">
               </div>
 
-              <div class="form-group required">
-                <label class="control-label" for="tumor-subtype">Tumor Subtype</label>
-                <input class="form-control" id="tumor-subtype">
-              </div>
-            </div>
-            <div class="col-3">
-            </div>
-            <div class="col-3">
-              <div class="form-group required">
-                <label class="control-label">Ulcerated</label>
-                <br/>
-
+              <div class="form-group">
+                <label class="control-label">Ulcerated</label><br/>
                 <div class="form-check form-check-inline ulcerated">
                   <input class="form-check-input" type="radio" id="yes-ulcerated">
                   <label class="form-check-label" for="yes-ulcerated"> Yes </label>
@@ -212,68 +206,118 @@
                 </div>
               </div>
 
-              <div class="form-group required">
+              <div class="form-group" style="margin-top: 0.7rem;">
                 <label class="control-label" for="breslow-depth">Breslow Depth (mm)</label>
                 <input class="form-control" id="breslow-depth">
               </div>
+
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label class="control-label" for="subtype">Melanoma Subtype</label>
+                <br/>
+                <select class="custom-select" id="subtype">
+                  <option> select</option>
+                  <option>Superficial spreading</option>
+                  <option>Nodular</option>
+                  <option>Lentigo maligna</option>
+                  <option> Acral lentiginous </option>
+                  
+                </select>
+              <div class="form-group">
+                <label class="control-label">Malignancy</label>
+                <br/>
+
+                <div class="form-check form-check-inline malignancy">
+                  <input class="form-check-input" type="radio" id="yes-malignancy">
+                  <label class="form-check-label" for="yes-malignanc"> Yes </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="no-malignancy">
+                  <label class="form-check-label" for="no-malignancy"> No </label>
+                </div>
+              </div>
+
+
             </div>
           </div>
 
           <div class="row">
             <div class="col-9">
-              <div class="form-group required">
-                <label class="control-label">Lymph Node</label>
+              <div class="form-group">
+                <label class="control-label">Lymphatic Examination</label>
                 <br/>
-                <input class="form-check-input" type="checkbox" value="" id="head-and-neck">
-                <label class="form-check-label" for="head-and-neck">
-                  Head and Neck
-                </label><br/>&emsp;
-                <input class="form-check-input" type="checkbox" value="" id="cervical">
-                <label class="form-check-label" for="cervical">
-                  Cervical
-                </label><br/>&emsp;
-                <input class="form-check-input" type="checkbox" value="" id="pre-auricular">
-                <label class="form-check-label" for="pre-auricular">
-                  Pre-auricular
-                </label><br/>&emsp;
-                <input class="form-check-input" type="checkbox" value="" id="Submandibular">
-                <label class="form-check-label" for="Submandibular">
-                  Submandibular
-                </label><br/>&emsp;
-                <input class="form-check-input" type="checkbox" value="" id="Supraclavicular">
-                <label class="form-check-label" for="Supraclavicular">
-                  Supraclavicular
-                </label><br/>
-                <input class="form-check-input" type="checkbox" value="" id="Axillary">
-                <label class="form-check-label" for="Axillary">
-                  Axillary
-                </label><br/>
-                <input class="form-check-input" type="checkbox" value="" id="Antecubital">
-                <label class="form-check-label" for="Antecubital">
-                  Antecubital
-                </label><br/>
-                <input class="form-check-input" type="checkbox" value="" id="Inguinal">
-                <label class="form-check-label" for="Inguinal">
-                  Inguinal
-                </label><br/>
-                <input class="form-check-input" type="checkbox" value="" id="Popliteal">
-                <label class="form-check-label" for="Popliteal">
-                  Popliteal
-                </label><br/>
+                <table class="table" id="lymphatic-table">
+                  <thead>
+                  <tr>
+                      <th scope="col" class="table-header"></th>
+                      <th scope="col" class="table-header">Pos</th>
+                      <th scope="col" class="table-header">Neg</th>
+                      <th scope="col" class="table-header">No Eval</th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-body-editable">
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Cervical </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Pre-auricular </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Submandibular </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Supraclavicular </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Axillary </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Antecubital </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Inguinal </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="lymphatic-text"> Popliteal </th>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                    </tr>
+
+                  </tbody>
+                </table>
                 <input class="form-control" for="lymph-yes" id="with-lymph-node"> <br/>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="lymph-no">
-                  <label class="form-check-label" for="lymph-no"> Not clinically evaluated </label>
+                <div class="form-group">
+                  <label for="additional-comment" class="not-required">Additional Comments</label>
+                  <textarea class="form-control" id="additional-comment" rows="3"></textarea>
+                </div>
                 </div>
               </div>
 
-
-
-              <div class="form-group required">
-                <label for="additional-comment" class="not-required">Additional Comments</label>
-                <label class="control-label" for="additional-comment" style="font-style:italic"> (e.g. important clinical history)</label>
-                <textarea class="form-control" id="additional-comment" rows="3"></textarea>
-              </div>
             </div>
           </div>
           <br/> <br/>
@@ -287,12 +331,12 @@
         <div class="table-background">
           <div class="row">
             <div class="col-9">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="derm-history"> Dermatologic History</label>
                 <textarea class="form-control" id="derm-history" rows="3"></textarea>
               </div>
 
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="med-history">Past Medical History</label> <br/>
                 <input class="form-check-input" type="checkbox" value="" id="None">
                 <label class="form-check-label" for="None">
@@ -348,7 +392,7 @@
                 <input class="form-control" id="other-med-history">
               </div>
 
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label">Family History of DNS/MM</label>
                 <br/>
 
@@ -374,10 +418,6 @@
                 <textarea class="form-control" id="skin-exam" rows="3"></textarea>
               </div>
 
-              <div class="form-group">
-                <label for="lymph-exam" class="not-required">Lymphatic Examination</label>
-                <textarea class="form-control" id="lymph-exam" rows="3"></textarea>
-              </div>
 
 
             </div>
@@ -387,10 +427,10 @@
         <br/> <br/> <br/> 
 
         <!-- patient report -->
-        <p class="patient-record-title"> Patient Report </p>
+        <p class="patient-record-title"> Reports </p>
         <div class="row">
           <div class="col-1 section-nav">
-            <p class="eval"> EVAL 1</p>
+            <p class="eval"> Untitled</p>
           </div>
           <div class="col-1 plus_icon">
             <img src="assets/plus.svg"/>
@@ -400,7 +440,7 @@
         <div class="table-background">
           <div class="row">
             <div class="col-3">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="path-code">Pathology Code</label>
                 <input class="form-control" id="path-code">
               </div>
@@ -408,7 +448,7 @@
           </div>
           <div class="row">
             <div class="col-9">
-              <div class="form-group required">
+              <div class="form-group">
                 <label for="path-report" class="control-label">Pathlogy Report</label>
                 <textarea class="form-control" id="path-report" rows="8"></textarea>
               </div>
@@ -417,7 +457,7 @@
 
           <div class="row">
             <div class="col-3">
-              <div class="form-group required">
+              <div class="form-group">
                 <label class="control-label" for="rad-code">Radiology Code</label>
                 <input class="form-control" id="rad-code">
               </div>
@@ -425,7 +465,7 @@
           </div>
           <div class="row">
             <div class="col-9">
-              <div class="form-group required">
+              <div class="form-group">
                 <label for="rad-report" class="control-label">Radiology Report</label>
                 <textarea class="form-control" id="rad-report" rows="8"></textarea>
               </div>
@@ -438,20 +478,20 @@
         <br/> <br/> <br/> 
 
 
-        <!-- staging -->
-        <p class="patient-record-title"> Staging </p>
+        <p class="patient-record-title"> Tumor Information </p>
         <div class="row">
           <div class="col-1 section-nav">
-            <p class="eval"> EVAL 1</p>
+            <p class="eval"> Untitled</p>
           </div>
           <div class="col-1 plus_icon">
             <img src="assets/plus.svg"/>
           </div>
         </div>
         <div class="table-background">
+          <p class="tumor-title"> Staging Information</p>
           <div class="row">
             <div class="col-4">
-              <div class="form-group required">
+              <div class="form-group" style="margin-top: 0">
                 <label class="control-label" for="t-stage">T Stage</label>
                 <br/>
                 <select class="custom-select" id="t-stage">
@@ -474,7 +514,7 @@
               </div>
             </div>
             <div class="col-4">
-              <div class="form-group required">
+              <div class="form-group" style="margin-top: 0">
                 <label class="control-label" for="n-stage">N Stage</label>
                 <br/>
                 <select class="custom-select" id="nn-stage">
@@ -499,7 +539,7 @@
             </div>
 
             <div class="col-4">
-              <div class="form-group required">
+              <div class="form-group" style="margin-top: 0">
                 <label class="control-label" for="m-stage">M Stage</label>
                 <br/>
                 <select class="custom-select" id="m-stage">
@@ -515,146 +555,145 @@
               </div>
             </div>
 
-          </div>
-        </div>
-        <br/><br/><br/>
-
-        <!-- recommendation -->
-        <p class="patient-record-title"> Recommendation </p>
-        <div class="row">
-          <div class="col-1 section-nav">
-            <p class="eval"> EVAL 1</p>
-          </div>
-          <div class="col-1 plus_icon">
-            <img src="assets/plus.svg"/>
-          </div>
-        </div>
-        <div class="table-background">
-          <div class="row">
-            <div class="col-9">
-              <p>
-                <button class="rec-title" data-bs-toggle="collapse" href="#suggest" type="button" aria-expanded="false" aria-controls="suggest">
-                  <p style="display: inline;"> Suggestion  </p>
-                  <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
-                </button>
-
-              </p>
-              <div class="collapse show" id="suggest">
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="biopsy">
-                  <label class="form-check-label rec-code" for="biopsy">
-                    Workup ME-8
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="biopsy">
-                    Biopsy
-                  </label><br/>
-                  <label class="form-check-label rec-desc" for="biopsy"> 
-                    Confirm metastasis through biopsy (core preferred vs. FNA vs. incisional / partial vs. excisional). Tissue preferred over cytology for mutational analysis.
-                  </label>                  
-                </div>
-
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="lab">
-                  <label class="form-check-label rec-code" for="lab">
-                    Workup ME-8
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="lab">
-                    Labs
-                  </label><br/>
-                  <label class="form-check-label rec-desc" for="lab"> 
-                    LDH
-                  </label>                  
-                </div>
-
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="rec-imaging">
-                  <label class="form-check-label rec-code" for="rec-imaging">
-                    Workup ME-8
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="rec-imaging">
-                    Imaging: Cross sectional with / without brain imaging
-                  </label><br/>
-                  <label class="form-check-label rec-desc" for="rec-imaging"> 
-                    Imaging for baseline staging and evaluate specific signs or symptoms.
-                  </label>                  
-                </div>
-
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="BRAF">
-                  <label class="form-check-label rec-code" for="BRAF">
-                    Workup ME-16
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="BRAF">
-                    BRAF Mutation testing
-                  </label><br/>              
-                </div>          
-              </div>
-
-              <br/>
-
-              <p>
-                <button class="rec-title" data-bs-toggle="collapse" href="#consider" type="button" aria-expanded="false" aria-controls="consider">
-                  <p style="display: inline;"> Consideration  </p>
-                  <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
-                </button>
-
-              </p>
-              <div class="collapse show" id="consider">
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="con-imaging">
-                  <label class="form-check-label rec-code" for="con-imaging">
-                    Follow Up ME-10
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="con-imaging">
-                    Imaging
-                  </label><br/>
-                  <label class="form-check-label rec-desc" for="con-imaging"> 
-                    Every 3-12mo for 2 years \ Every 6-12mo for years 3-5 to screen for recurrence of metastatic disease.
-                  </label>                  
-                </div>
-
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="genetic">
-                  <label class="form-check-label rec-code" for="genetic">
-                    Follow Up ME-A
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="genetic">
-                    Genetic Testing
-                  </label><br/> 
-                  <label class="form-check-label rec-desc" for="genetic">
-                    Consider if: personal history of 3+ invasive cutaneous melanomas, or if mix of invasive melanoma, astrocytoma, and / or pancreatic cancer in patient or family.
-                  </label>          
-                </div>          
-              </div> <br/>
-
-              <p>
-                <button class="rec-title" data-bs-toggle="collapse" href="#not-rec" type="button" aria-expanded="false" aria-controls="not-rec">
-                  <p style="display: inline;"> Not recommended </p>
-                  <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
-                </button>
-
-              </p>
-              <div class="collapse show" id="not-rec">
-                <div class="form-group">
-                  <input class="form-check-input" type="checkbox" value="" id="blood-test">
-                  <label class="form-check-label rec-code" for="blood-test">
-                    Follow Up ME-10
-                  </label><br/>
-                  <label class="form-check-label rec-action" for="blood-test">
-                    Routine blood tests
-                  </label><br/>                 
-                </div>        
-              </div><br/>
-
-
-
-
-
-
+            <div class="col-4">
+              <p class="stage-title"> Overall Stage:</p>
+              <p class="stage-autofill"> NA </p> <br/>
+              <p class="stage-title"> 5-year survival rate: </p>
+              <p class="stage-autofill"> NA </p>
             </div>
-          </div>
-        </div>    
+            <br/> <br/> <br/>
 
+            <p class="tumor-title"> Recommendation</p>
+            <div class="row">
+              <div class="col-9">
+                <p>
+                  <button class="rec-title" data-bs-toggle="collapse" href="#suggest" type="button" aria-expanded="false" aria-controls="suggest">
+                    <p style="display: inline; font-size: 0.9rem;"> Suggestion  </p>
+                    <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
+                  </button>
+  
+                </p>
+                <div class="collapse show" id="suggest">
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="biopsy">
+                    <label class="form-check-label rec-code" for="biopsy">
+                      Workup ME-8
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="biopsy">
+                      Biopsy
+                    </label><br/>
+                    <label class="form-check-label rec-desc" for="biopsy"> 
+                      Confirm metastasis through biopsy (core preferred vs. FNA vs. incisional / partial vs. excisional). Tissue preferred over cytology for mutational analysis.
+                    </label>                  
+                  </div>
+  
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="lab">
+                    <label class="form-check-label rec-code" for="lab">
+                      Workup ME-8
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="lab">
+                      Labs
+                    </label><br/>
+                    <label class="form-check-label rec-desc" for="lab"> 
+                      LDH
+                    </label>                  
+                  </div>
+  
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="rec-imaging">
+                    <label class="form-check-label rec-code" for="rec-imaging">
+                      Workup ME-8
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="rec-imaging">
+                      Imaging: Cross sectional with / without brain imaging
+                    </label><br/>
+                    <label class="form-check-label rec-desc" for="rec-imaging"> 
+                      Imaging for baseline staging and evaluate specific signs or symptoms.
+                    </label>                  
+                  </div>
+  
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="BRAF">
+                    <label class="form-check-label rec-code" for="BRAF">
+                      Workup ME-16
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="BRAF">
+                      BRAF Mutation testing
+                    </label><br/>              
+                  </div>          
+                </div>
+  
+                <br/>
+  
+                <p>
+                  <button class="rec-title" data-bs-toggle="collapse" href="#consider" type="button" aria-expanded="false" aria-controls="consider">
+                    <p style="display: inline; font-size: 0.9rem;"> Consideration  </p>
+                    <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
+                  </button>
+  
+                </p>
+                <div class="collapse show" id="consider">
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="con-imaging">
+                    <label class="form-check-label rec-code" for="con-imaging">
+                      Follow Up ME-10
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="con-imaging">
+                      Imaging
+                    </label><br/>
+                    <label class="form-check-label rec-desc" for="con-imaging"> 
+                      Every 3-12mo for 2 years \ Every 6-12mo for years 3-5 to screen for recurrence of metastatic disease.
+                    </label>                  
+                  </div>
+  
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="genetic">
+                    <label class="form-check-label rec-code" for="genetic">
+                      Follow Up ME-A
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="genetic">
+                      Genetic Testing
+                    </label><br/> 
+                    <label class="form-check-label rec-desc" for="genetic">
+                      Consider if: personal history of 3+ invasive cutaneous melanomas, or if mix of invasive melanoma, astrocytoma, and / or pancreatic cancer in patient or family.
+                    </label>          
+                  </div>          
+                </div> <br/>
+  
+                <p>
+                  <button class="rec-title" data-bs-toggle="collapse" href="#not-rec" type="button" aria-expanded="false" aria-controls="not-rec">
+                    <p style="display: inline; font-size: 0.9rem;"> Not recommended </p>
+                    <img style="display: inline;" class="expand-icon" src="assets/expand-icon.svg"  />
+                  </button>
+  
+                </p>
+                <div class="collapse show" id="not-rec">
+                  <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="blood-test">
+                    <label class="form-check-label rec-code" for="blood-test">
+                      Follow Up ME-10
+                    </label><br/>
+                    <label class="form-check-label rec-action" for="blood-test">
+                      Routine blood tests
+                    </label><br/>                 
+                  </div>        
+                </div><br/><br/>
+                <div class="form-group">
+                  <label for="additional-comment" class="not-required">Additional Recommendation</label>
+                  <textarea class="form-control" id="additional-comment" rows="3"></textarea>
+                </div><br/><br/>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div>
+
+        </div>
+
+
+ 
 
 
       </form>

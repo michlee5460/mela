@@ -211,6 +211,13 @@ tbody, td, tfoot, th, thead, tr {
   color: #848484;
 }
 
+.lymphatic-text{
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding-left: 0 !important;
+}
+
+
 .new-patient{
   margin-top: 1.2rem;
 
@@ -269,6 +276,16 @@ tbody, td, tfoot, th, thead, tr {
   padding-top: 0.5rem;
 }
 
+.stage-autofill{
+  display: inline;
+  color: #BABABA;
+}
+
+.stage-title{
+  /* font-weight: 500;  */
+  display: inline;
+}
+
 .specify {
   font-style: italic;
   font-size: 0.7rem;
@@ -279,6 +296,11 @@ th{
   font-weight: 600;
 }
 
+.tumor-title{
+  padding-top: 3rem;
+  padding-bottom: 0;
+  font-weight: 600;
+}
 
 .ulcerated {
   margin-bottom: 1rem;
@@ -290,6 +312,17 @@ th{
   font-size: 1.1rem;
   font-weight: 700;
 
+}
+
+#lymphatic-table {
+  width: 40%;
+  border-collapse: initial;
+}
+
+#lymphatic-table>:not(caption)>*>* {
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0.2rem !important;
 }
 
 #patient-record{
