@@ -255,6 +255,29 @@ tbody, td, tfoot, th, thead, tr {
   padding-top: 0.5rem;
 }
 
+.add-primary-button {
+  width:  180px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px #556EF2;
+  background-color: #F8F8F6;
+  color: #556EF2;
+  padding-top: 0.5rem;
+}
+
+.add-primary-button:hover {
+  width:  180px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #556EF2;
+  color: #FFFFFF;
+  padding-top: 0.5rem;
+}
+
+
 .section-nav{
   margin-top: 10px;
   background-color: #FDFDFC;
@@ -271,19 +294,21 @@ tbody, td, tfoot, th, thead, tr {
   text-align: center;
   border-radius: 5px;
   border: solid 1px #556EF2;
-  background-color: #FFFFFF;
+  background-color: #F8F8F6;
   color: #556EF2;
   padding-top: 0.5rem;
 }
 
 .stage-autofill{
-  display: inline;
   color: #BABABA;
 }
 
-.stage-title{
-  /* font-weight: 500;  */
+.stage{
   display: inline;
+}
+
+.stage-title{
+  font-weight: 500;
 }
 
 .specify {

@@ -40,8 +40,6 @@ $('.datepicker').datepicker({
   });
 
 
-// $('.dropdown-toggle').dropdown("toggle");
-
 // ------------------------ BACK END ------------------------
 
 var CLIENT_ID = config.MY_CLIENT_ID;
@@ -78,8 +76,13 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-    generateTumorBoardTables();
-    listPatients();
+    if ( document.URL.includes("tumor-board.html") ) {
+      generateTumorBoardTables();
+      listPatients();
+    };
+    if ( document.URL.includes("patient-record.html") ) {
+      generatePatientList();
+    };
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -193,6 +196,26 @@ function makeRowNotEditable(lastName, firstName, stage, primaryProvider, pathCod
   return rowHTML;
 }
 
+
+function generatePatientList(){
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET_ID,
+    range: 'PatientData!A2:AK',
+  }).then(function(response) {
+    var range = response.result;
+    if (range.values.length > 0) {
+      for (i = 0; i < range.values.length; i++) {
+        var row = range.values[i];
+
+      }
+    } else {
+    alert('No data found.');
+    }
+  }, function(response) {
+    alert('Error: ' + response.result.error.message);
+  });
+}
+
 function generateTumorBoardTables(){
   // generate all the needed tumor board tables
 }
@@ -260,3 +283,69 @@ function updateCheck(MRN, isChecked, dept){
   });
 }
 
+
+// ==================== Add New Patient Functions ====================
+
+var t = "TX";
+var n = "NX";
+var m = "MX";
+
+function updateT(tStage){
+  this.t = tStage;
+  getOverallStage();
+}
+
+function updateN(nStage){
+  this.n = nStage;
+  getOverallStage();
+}
+
+function updateM(mStage){
+  this.m = mStage;
+  getOverallStage();
+}
+
+function getOverallStage(){
+  console.log(this.t+this.n+this.m);
+  var body = {"values": [["=MATCH(\"" + this.t + this.n + this.m + "\", StagingGroups!B:B, 0)"]]}
+  gapi.client.sheets.spreadsheets.values.update({
+    spreadsheetId: SHEET_ID,
+    range: 'LookUp!A3',
+    valueInputOption: 'USER_ENTERED',
+    includeValuesInResponse: true,
+    resource: body
+  }).then((response) => {
+    console.log("updated lookup sheet " + response.result.updatedData.values);
+   
+    // get which row has the right group number
+    var groupNumRow = response.result.updatedData.values;
+    if (groupNumRow != "#N/A"){ 
+      // get group number
+      gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: SHEET_ID,
+        range: 'StagingGroups!A' + groupNumRow + ":E" + groupNumRow
+      }).then((response) => {
+        var stageGroup = response.result.values[0][0];
+        var survivalRate = response.result.values[0][2];
+        var pathStage = response.result.values[0][3];
+        var clinicalStage = response.result.values[0][4];
+        console.log (stageGroup + survivalRate + pathStage);
+        document.getElementById("overall-stage").classList.remove("stage-autofill");
+        document.getElementById("overall-stage").innerHTML = clinicalStage;
+        document.getElementById("survival-rate").classList.remove("stage-autofill");
+        document.getElementById("survival-rate").innerHTML = survivalRate;
+      }, function(response) {
+        alert('Error: ' + response.result.error.message);
+      });
+    } else {
+      document.getElementById("survival-rate").classList.add("stage-autofill");
+      document.getElementById("overall-stage").classList.add("stage-autofill");
+      document.getElementById("overall-stage").innerHTML = "NA";
+      document.getElementById("survival-rate").innerHTML = "NA";
+    }
+  });
+}
+
+
+// for generating dermatologic history
+// age, anatomical location, ulcerated, malignant, subtype, Breslow depth, positive lymph nodes, additional comments
