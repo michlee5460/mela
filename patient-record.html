@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,7 +43,12 @@
             <div class="col-4"></div>
             <div class="col-3">
                 <div class="row">
-                <div class="col-8">
+                <div class="col-4">
+                </div>
+                <div class="col-4 ">
+                  <!--Buttons to initiate auth sequence and sign out-->
+                  <button id="authorize_button">Sign In</button>
+                  <button id="signout_button" style="display:none;">Sign Out</button>
                 </div>
                 <div class="col-2">
                     <img src="assets/profile.svg" alt="Top right profile picture"/>
@@ -106,11 +110,11 @@
                 <label class="control-label">Patient Sex</label>
                 <br/>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="male">
+                  <input class="form-check-input" type="radio" id="male" name="gender">
                   <label class="form-check-label" for="male"> Male </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" id="female">
+                  <input class="form-check-input" type="radio" id="female" name="gender">
                   <label class="form-check-label" for="female"> Female</label>
                 </div>
               </div>
@@ -262,51 +266,51 @@
                   <tbody id="table-body-editable">
                     <tr>
                       <th scope="row" class="lymphatic-text"> Cervical </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="cervical"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="cervical"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="cervical"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Pre-auricular </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="pre-auricular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="pre-auricular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="pre-auricular"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Submandibular </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="submandibular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="submandibular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="submandibular"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Supraclavicular </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="supraclavicular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="supraclavicular"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="supraclavicular"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Axillary </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="axillary"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="axillary"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="axillary"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Antecubital </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="antecubital"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="antecubital"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="antecubital"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Inguinal </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="inguinal"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="inguinal"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="inguinal"></td>
                     </tr>
                     <tr>
                       <th scope="row" class="lymphatic-text"> Popliteal </th>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
-                      <td><input class="form-check-input" type="radio" aria-label="..."></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="popliteal"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="popliteal"></td>
+                      <td><input class="form-check-input" type="radio" aria-label="..." name="popliteal"></td>
                     </tr>
 
                   </tbody>
@@ -398,18 +402,18 @@
                 <br/>
 
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="positive">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="positive" name="family-history">
                   <label class="form-check-label" for="positive"> Positive </label>
                   <label class="form-check-label specify" for="positive"> (please specify) </label>
                 </div>
                 <input class="form-control" for="positive" id="positive-fam-history">
 
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="negative">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="negative" name="family-history">
                   <label class="form-check-label" for="negative"> Negative </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="unknown">
+                  <input class="form-check-input" type="radio" name="RadioOptions" id="unknown" name="family-history">
                   <label class="form-check-label" for="unknown"> Unknown</label>
                 </div>
               </div>
@@ -694,9 +698,6 @@
         <div>
 
         </div>
-
-        <button id="authorize_button">Authorize</button>
-        <button id="signout_button" style="display: none;">Sign Out</button><br>
 
       </form>
       <br/> <br/> <br/> <br/> <br/>

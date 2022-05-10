@@ -1,4 +1,4 @@
-// ------------------------ FRONT END ------------------------
+// ========================= FRONT END SCRIPTS =========================
 
 // drag and drop table rows
 // reference: https://bootsnipp.com/snippets/P2pn5
@@ -32,16 +32,27 @@ $("#april-4th-table tbody").sortable({
     update: function() {}
         });
 
-
-
-// Data Picker Initialization
+// data picker initialization
 $('.datepicker').datepicker({
     inline: true
   });
 
 
-// ------------------------ BACK END ------------------------
 
+
+
+
+// ========================= BACK END SCRIPTS =========================
+
+/* 
+ * this prototype uses Google Sheets API
+ * https://developers.google.com/sheets/api/quickstart/js
+ * 
+ * this primary sheet used for this application can be found here:
+ * https://docs.google.com/spreadsheets/d/1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8/edit?usp=sharing
+ */
+
+// variables needed for Google Sheets API
 var CLIENT_ID = config.MY_CLIENT_ID;
 var API_KEY = config.MY_API_KEY;
 console.log("hi " + CLIENT_ID);
@@ -52,6 +63,8 @@ var SHEET_ID = "1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8";
 var authorizeButton = document.getElementById('authorize_button');
 var signoutButton = document.getElementById('signout_button');
 
+
+// API initialization
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }
@@ -76,13 +89,24 @@ function updateSigninStatus(isSignedIn) {
   if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-    if ( document.URL.includes("tumor-board.html") ) {
+
+    // execute load functions for tumor board page
+    if (document.URL.includes("tumor-board.html")) {
       generateTumorBoardTables();
       listPatients();
     };
-    if ( document.URL.includes("patient-record.html") ) {
+
+    // execute load functions for patient record page
+    if (document.URL.includes("patient-record.html")) {
+    };
+
+
+    // execute load functions for patient list page (index)
+    if (document.URL.includes("index.html")) {
       generatePatientList();
     };
+    
+
   } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -97,6 +121,15 @@ function handleSignoutClick(event) {
   gapi.auth2.getAuthInstance().signOut();
 }
 
+
+
+
+
+
+// ==================== Tumor Board Page Scripts ====================
+
+
+// Generates the rows for the upcoming tumor board table
 function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm, MRN) {
   var rowHTML = "<tr>";
   rowHTML += ("<th scope=\"row\" class=\"name\">" + "<img class=\"six-dots\" src=\"assets/six_dots.svg\"\/>" +lastName + ", " + firstName + "</th>");
@@ -141,8 +174,7 @@ function makeRowEditable(lastName, firstName, stage, primaryProvider, pathCode, 
 
 
 
-
-
+// Finds the respective column in the Google sheet for a given department
 function deptToCol (department){
   if (department == "medonc"){
     return 'G';
@@ -157,6 +189,9 @@ function deptToCol (department){
   }
 }
 
+
+
+// Generates the rows for the past tumor board tables
 function makeRowNotEditable(lastName, firstName, stage, primaryProvider, pathCode, radCode, needsMedOnc, needsRadOnc, needsSurgery, needsDerm, MRN) {
   var rowHTML = "<tr>";
   rowHTML += ("<th scope=\"row\">" +lastName + ", " + firstName + "</th>");
@@ -197,29 +232,13 @@ function makeRowNotEditable(lastName, firstName, stage, primaryProvider, pathCod
 }
 
 
-function generatePatientList(){
-  gapi.client.sheets.spreadsheets.values.get({
-    spreadsheetId: SHEET_ID,
-    range: 'PatientData!A2:AK',
-  }).then(function(response) {
-    var range = response.result;
-    if (range.values.length > 0) {
-      for (i = 0; i < range.values.length; i++) {
-        var row = range.values[i];
-
-      }
-    } else {
-    alert('No data found.');
-    }
-  }, function(response) {
-    alert('Error: ' + response.result.error.message);
-  });
-}
-
+// generate all the needed tumor board tables
 function generateTumorBoardTables(){
-  // generate all the needed tumor board tables
 }
 
+
+
+// get all patients for tumor board page and populate each tumor board table
 function listPatients() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: SHEET_ID,
@@ -284,7 +303,37 @@ function updateCheck(MRN, isChecked, dept){
 }
 
 
-// ==================== Add New Patient Functions ====================
+
+
+
+
+// ==================== Add New Patient Scripts ====================
+
+
+function generatePatientList(){
+  gapi.client.sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET_ID,
+    range: 'PatientData!A2:AK',
+  }).then(function(response) {
+    var range = response.result;
+    if (range.values.length > 0) {
+      for (i = 0; i < range.values.length; i++) {
+        var row = range.values[i];
+      }
+    } else {
+    alert('No data found.');
+    }
+  }, function(response) {
+    alert('Error: ' + response.result.error.message);
+  });
+}
+
+
+
+
+
+
+// ==================== Add New Patient Scripts ====================
 
 var t = "TX";
 var n = "NX";

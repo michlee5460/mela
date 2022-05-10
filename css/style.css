@@ -27,6 +27,20 @@ body {
 }
 
 
+#authorize_button{
+  border: none;
+  background: none;
+  color: #848484;
+  margin: auto;
+}
+
+#signout_button{
+  border: none;
+  background: none;
+  color: #848484;
+  margin: auto;
+}
+
 
 /* tumor board page */
 .add-patient{
@@ -156,6 +170,7 @@ tbody, td, tfoot, th, thead, tr {
 
 /* patient record page */
 
+
 .add-report{
   margin-top: 1rem;
   width: 100%;
@@ -236,7 +251,8 @@ tbody, td, tfoot, th, thead, tr {
 
 .patient-record-top{
   padding-top: 1.5rem;
-  background-color: #F8F8F6;
+  background-color: #F8F8F699;
+
   padding-bottom: 1.5rem;
 }
 
@@ -433,7 +449,3 @@ th{
   margin-top: 2.3rem;
   margin-left: 1rem;
 }
-
-
-
-

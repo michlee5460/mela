@@ -88,7 +88,7 @@ function appendPre(message) {
 function listContacts() {
   gapi.client.sheets.spreadsheets.values.get({
     spreadsheetId: '1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8',
-    range: 'Sheet1!A2:C',
+    range: 'Test!A2:C',
   }).then(function(response) {
     var range = response.result;
     if (range.values.length > 0) {
@@ -113,7 +113,7 @@ function addContactToSheet() {
   var contactNumber = document.getElementById("contact-number").value;
   var params = {
     spreadsheetId: '1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8',
-    range: 'Sheet1!A2:B11',
+    range: 'Test!A2:B11',
     valueInputOption: 'USER_ENTERED',
     insertDataOption: 'INSERT_ROWS',
   };
@@ -135,7 +135,7 @@ function addContactToSheet() {
 function updateContact(){
   var updateRow = String((parseInt(document.getElementById("update-row").value) + 1));
   console.log(updateRow);
-  console.log('Sheet1!A' + updateRow);
+  console.log('Test!A' + updateRow);
   var likesDogsEdit = document.getElementById("likes-dogs-edit").checked;
   var contactNameEdit = document.getElementById("contact-name-edit").value;
   var contactNumberEdit = document.getElementById("contact-number-edit").value;
@@ -145,7 +145,7 @@ function updateContact(){
   };
   gapi.client.sheets.spreadsheets.values.update({
      spreadsheetId: '1vZgO8rbWy5ns95FQ1I_MYlQ7iB3U_mee_FJ7WP_75l8',
-     range: 'Sheet1!A' + updateRow,
+     range: 'Test!A' + updateRow,
      valueInputOption: 'USER_ENTERED',
      resource: body
   }).then((response) => {
