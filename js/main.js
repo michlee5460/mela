@@ -307,7 +307,46 @@ function updateCheck(MRN, isChecked, dept){
 
 
 
-// ==================== Add New Patient Scripts ====================
+// ==================== Patient List Scripts ====================
+
+/**
+ <tr>
+    <th scope="row"> Kren, Jane </th>
+    <td> F </td>
+    <td> 43 </td>
+    <td> Left Forearm </td>
+    <td> cIV </td>
+    <td> 04/04/2022 </td>
+    <td class="patient-status">
+      <img src="assets/incomplete.svg" />
+      <p class="status"> Incomplete</p>
+    </td>
+  </tr>
+ */
+
+function makePatientListRow(name, gender, age, anatomicalLocation, stage, confDate, status){
+  var rowHTML = "<tr>";
+  rowHTML += "<th scope=\"row\"> " + name + " </th>";
+  rowHTML += "<td> " + gender + " </td>";
+  rowHTML += "<td> " + age + " </td>";
+  rowHTML += "<td> " + anatomicalLocation + " </td>";
+  rowHTML += "<td> " + stage + " </td>";
+  rowHTML += "<td> " + confDate + " </td>";
+  rowHTML += "<td class=\"patient-status\"> "
+  if (status == "Incomplete") {
+    rowHTML += "<img src=\"assets/incomplete.svg\"/> <p class=\"status\"> Incomplete</p>";
+  } else if (status == "Ready for Tumor Board") {
+    rowHTML += "<img src=\"assets/ready_for_TB.svg\"/> <p class=\"status\"> Ready for TB</p>";
+  } else if (status == "Reviewed") {
+    rowHTML += "<img src=\"assets/reviewed.svg\"/> <p class=\"status\"> Reviewed</p>";
+  } else if (status == "Additional Workup") {
+    rowHTML += "<img src=\"assets/workup.svg\"/> <p class=\"status\"> Additional Workup</p>";
+  } else {
+    rowHTML += "<img src=\"assets/deceased.svg\"/> <p class=\"status\"> Deceased</p>";
+  }
+  rowHTML += " </td>";
+  return rowHTML;
+}
 
 
 function generatePatientList(){
@@ -319,6 +358,7 @@ function generatePatientList(){
     if (range.values.length > 0) {
       for (i = 0; i < range.values.length; i++) {
         var row = range.values[i];
+        document.getElementById('patient-list-body-table').innerHTML += makePatientListRow(row[0] + ", " + row[1], row[12], row[14], row[20], row[2],row[10],row[34]);
       }
     } else {
     alert('No data found.');
@@ -398,3 +438,5 @@ function getOverallStage(){
 
 // for generating dermatologic history
 // age, anatomical location, ulcerated, malignant, subtype, Breslow depth, positive lymph nodes, additional comments
+
+
